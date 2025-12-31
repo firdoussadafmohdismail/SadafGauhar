@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pastel Islamic Blessings – Birth Month & 2026</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600&family=Amiri:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background: radial-gradient(circle at top, #fff1f7, #f6f0ff, #eef7ff);
+      color: #4b3b5a;
+    }
+
+    /* Pastel animated overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(120deg, #ffd6e8, #e6ddff, #dff6ff, #fff1cc);
+      background-size: 400% 400%;
+      animation: pastelFlow 20s ease infinite;
+      z-index: -3;
+      opacity: 0.6;
+    }
+
+    @keyframes pastelFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Islamic geometric pattern */
+    .pattern {
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.5) 2px, transparent 3px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.4) 2px, transparent 3px);
+      background-size: 60px 60px;
+      animation: drift 40s linear infinite;
+      z-index: -2;
+    }
+
+    @keyframes drift {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 300px 300px, -300px -300px; }
+    }
+
+    /* Stars */
+    .star {
+      position: fixed;
+      width: 2px;
+      height: 2px;
+      background: #ffdca8;
+      border-radius: 50%;
+      animation: twinkle 3s infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.3; }
+      to { opacity: 1; box-shadow: 0 0 8px #ffdca8; }
+    }
+
+    /* Moon */
+    .moon {
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #ffe6a7);
+      box-shadow: 0 0 40px rgba(255,215,180,0.6);
+      animation: moonFloat 8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes moonFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Firefly-style sparkles */
+    .spark {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle, #fff, transparent);
+      border-radius: 50%;
+      animation: floatUp linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      to { transform: translateY(-10vh) scale(1.2); opacity: 1; }
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 1.5s ease;
+    }
+
+    section.show { opacity: 1; transform: translateY(0); }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      background: linear-gradient(90deg, #c58fff, #ffb7d5, #ffdca8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 6s linear infinite;
+    }
+
+    @keyframes shine { to { background-position: 200% center; } }
+
+    h2 {
+      margin-top: 15px;
+      font-size: clamp(1.3rem, 3vw, 2.2rem);
+      color: #6a4c93;
+    }
+
+    .card {
+      max-width: 900px;
+      background: rgba(255,255,255,0.6);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 40px rgba(200,160,255,0.35);
+      backdrop-filter: blur(10px);
+      font-size: clamp(1rem, 2.2vw, 1.4rem);
+      line-height: 1.9;
+    }
+
+    .calligraphy {
+      font-family: 'Amiri', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: 20px;
+      animation: calliGlow 5s ease-in-out infinite;
+      color: #b089ff;
+    }
+
+    @keyframes calliGlow {
+      0%,100% { text-shadow: 0 0 10px rgba(176,137,255,0.6); }
+      50% { text-shadow: 0 0 30px rgba(176,137,255,1); }
+    }
+
+    .year {
+      font-size: clamp(4rem, 10vw, 7rem);
+      font-family: 'Cinzel', serif;
+      background: linear-gradient(180deg, #c58fff, #ffb7d5, #ffdca8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: zoomGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes zoomGlow { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+
+    footer { padding: 40px; text-align: center; opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+  <div class="pattern"></div>
+  <div class="moon"></div>
+
+  <!-- Stars -->
+  <script>
+    for (let i = 0; i < 140; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.top = Math.random() * 100 + 'vh';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(s);
+    }
+  </script>
+
+  <!-- Sparkles -->
+  <script>
+    for (let i = 0; i < 80; i++) {
+      const sp = document.createElement('div');
+      sp.className = 'spark';
+      sp.style.left = Math.random() * 100 + 'vw';
+      sp.style.animationDuration = 8 + Math.random() * 10 + 's';
+      sp.style.animationDelay = Math.random() * 10 + 's';
+      document.body.appendChild(sp);
+    }
+  </script>
+
+  <!-- Nasheed (auto-mute friendly) -->
+  <audio id="nasheed" loop muted autoplay>
+    <source src="nasheed.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Sections -->
+  <section>
+    <div>
+      <div class="calligraphy">﷽</div>
+      <h1>Happy Birth Month</h1>
+      <h2>December 2025</h2>
+      <p style="margin-top:20px; font-size:1.2rem;">
+        🌸 Dr. Sadaf Gauhar Mohammad Mushtaque<br>(Duggu Sheru) 🌸
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <div class="calligraphy">الله</div>
+      May Allah grant you a <b>happy, healthy, wealthy & prosperous life</b>.<br><br>
+      May your <b>Deen</b> shine with Imaan, wisdom and righteousness,<br>
+      and your <b>Duniya</b> overflow with peace, honor, success and barkat.<br><br>
+      May angels protect you, duas surround you,
+      and Allah’s mercy guide you in every step.<br><br>
+
+      Love you infinity Shahzade 🤍
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <h2>Have a Happy, Healthy, Wealthy and Prosperous New Year</h2>
+      <div class="year">2026</div>
+      <p style="margin-top:20px; font-size:1.2rem;">
+        ✨ A year of healing, faith, softness, strength & gratitude ✨
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Made with love and duas ✨<br>© Firdous Sadaf M. Ismail 2026
+  </footer>
+
+  <!-- Scroll + Audio -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const reveal = () => {
+      sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 150) {
+          sec.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    document.body.addEventListener('click', () => {
+      const a = document.getElementById('nasheed');
+      a.muted = false;
+      a.play();
+    }, { once: true });
+  </script>
+
+</body>
+</html>
